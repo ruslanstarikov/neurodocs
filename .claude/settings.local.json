@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "WebFetch(domain:daisyui.com)",
-      "Bash(npm i:*)"
+      "Bash(npm i:*)",
+      "Bash(php artisan make:controller:*)",
+      "Bash(npm install:*)",
+      "Bash(php artisan migrate:*)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
