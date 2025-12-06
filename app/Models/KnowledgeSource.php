@@ -31,4 +31,34 @@ class KnowledgeSource extends Model
     {
         return $this->hasMany(KnowledgeEntity::class);
     }
+
+    public function outgoingRelations(): HasMany
+    {
+        return $this->hasMany(KnowledgeSourceRelation::class, 'from_knowledge_source_id');
+    }
+
+    public function incomingRelations(): HasMany
+    {
+        return $this->hasMany(KnowledgeSourceRelation::class, 'to_knowledge_source_id');
+    }
+
+    public function relatedTargets(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            KnowledgeSource::class,
+            'knowledge_source_relations',
+            'from_knowledge_source_id',
+            'to_knowledge_source_id'
+        );
+    }
+
+    public function relatedSources(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            KnowledgeSource::class,
+            'knowledge_source_relations',
+            'to_knowledge_source_id',
+            'from_knowledge_source_id'
+        );
+    }
 }
