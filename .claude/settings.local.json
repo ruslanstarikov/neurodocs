@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:daisyui.com)",
+      "Bash(npm i:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
