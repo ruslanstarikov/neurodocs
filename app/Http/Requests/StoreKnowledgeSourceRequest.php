@@ -34,7 +34,6 @@ class StoreKnowledgeSourceRequest extends FormRequest
             $rules['database'] = 'required|string';
             $rules['username'] = 'required|string';
             $rules['password'] = 'required|string';
-            $rules['ssl'] = 'boolean';
         }
 
         return $rules;

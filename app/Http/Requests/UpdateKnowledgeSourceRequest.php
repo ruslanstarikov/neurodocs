@@ -20,7 +20,6 @@ class UpdateKnowledgeSourceRequest extends FormRequest
             'slug' => 'required|string|max:255|unique:knowledge_sources,slug,' . $knowledgeSource->id,
             'type' => 'required|in:codebase,database',
             'description' => 'nullable|string',
-            'is_active' => 'boolean',
         ];
 
         // Type-specific validation
@@ -39,7 +38,6 @@ class UpdateKnowledgeSourceRequest extends FormRequest
             $rules['username'] = 'required|string';
             // Password is optional on update (keep existing if blank)
             $rules['password'] = 'nullable|string';
-            $rules['ssl'] = 'boolean';
         }
 
         return $rules;
